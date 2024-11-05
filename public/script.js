@@ -1,23 +1,35 @@
 // script.js
-const apiUrl = "http://localhost:3000/students";
 
-// Função para buscar e listar os students
+// Mude a URL da API para usar o endpoint correto dependendo se está local ou em produção
+const apiUrl =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000/students"
+    : "https://restful-api-2bex.onrender.com/students";
+
+// Função para buscar e listar os estudantes
 async function fetchStudents() {
-  const response = await fetch(apiUrl);
-  const students = await response.json();
-  const studentsDiv = document.getElementById("students");
-  studentsDiv.innerHTML = "";
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) throw new Error("Failed to fetch students");
 
-  students.forEach((student) => {
-    const div = document.createElement("div");
-    div.className = "student-item";
-    div.innerHTML = `
+    const students = await response.json();
+    const studentsDiv = document.getElementById("students");
+    studentsDiv.innerHTML = ""; // Limpa a lista atual
+
+    // Adiciona os estudantes à lista
+    students.forEach((student) => {
+      const div = document.createElement("div");
+      div.className = "student-item";
+      div.innerHTML = `
           <strong>${student.name}</strong> (Id: ${student.id}, Idade: ${student.age}, Curso: ${student.course}, Ano: ${student.year})
           <button onclick="deleteStudent('${student.id}')">Delete</button>
           <button onclick="showUpdateForm('${student.id}', '${student.name}', ${student.age}, '${student.course}', ${student.year})">Atualizar</button>
       `;
-    studentsDiv.appendChild(div);
-  });
+      studentsDiv.appendChild(div);
+    });
+  } catch (error) {
+    console.error("Error fetching students:", error);
+  }
 }
 
 // Função para mostrar o formulário de atualização
@@ -29,8 +41,7 @@ function showUpdateForm(id, name, age, course, year) {
   document.getElementById("updateYear").value = year;
 }
 
-// Função para adicionar um novo student
-// Função para adicionar um novo student
+// Função para adicionar um novo estudante
 async function addStudent() {
   const name = document.getElementById("newName").value;
   const age = parseInt(document.getElementById("newAge").value);
@@ -65,6 +76,8 @@ async function addStudent() {
 
   if (addResponse.ok) {
     fetchStudents(); // Atualiza a lista de estudantes
+  } else {
+    console.error("Failed to add student:", addResponse.statusText);
   }
 
   // Limpa os campos de entrada
@@ -82,13 +95,18 @@ async function updateStudent() {
   const course = document.getElementById("updateCourse").value;
   const year = parseInt(document.getElementById("updateYear").value);
 
-  await fetch(`${apiUrl}/${id}`, {
+  const updateResponse = await fetch(`${apiUrl}/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, age, course, year }),
   });
 
-  fetchStudents(); // Atualiza a lista após a atualização
+  if (updateResponse.ok) {
+    fetchStudents(); // Atualiza a lista após a atualização
+  } else {
+    console.error("Failed to update student:", updateResponse.statusText);
+  }
+
   // Limpa os campos de entrada
   document.getElementById("updateId").value = ""; // Limpa o campo de ID
   document.getElementById("updateName").value = ""; // Limpa o campo de Nome
@@ -97,11 +115,16 @@ async function updateStudent() {
   document.getElementById("updateYear").value = ""; // Limpa o campo de Ano
 }
 
-// Função para deletar um student
+// Função para deletar um estudante
 async function deleteStudent(id) {
-  await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
-  fetchStudents();
+  const deleteResponse = await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
+
+  if (deleteResponse.ok) {
+    fetchStudents(); // Atualiza a lista após a deleção
+  } else {
+    console.error("Failed to delete student:", deleteResponse.statusText);
+  }
 }
 
-// Carregar a lista de students ao carregar a página
-fetchStudents();
+// Carregar a lista de estudantes ao carregar a página
+document.addEventListener("DOMContentLoaded", fetchStudents);

@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const FileSync = require("lowdb/adapters/FileSync");
-const low = require("lowdb"); // Certifique-se de importar lowdb
+const low = require("lowdb");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
