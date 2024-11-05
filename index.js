@@ -9,6 +9,16 @@ const dbFileName = "db.json";
 const adapter = new FileSync(dbFileName);
 const db = low(adapter);
 
+// Seed de dados se o banco de dados estiver vazio
+const students = db.get("students").value();
+if (students.length === 0) {
+  db.set("students", [
+    { id: "1", name: "Alice", age: 20, course: "Computer Science", year: 2 },
+    { id: "2", name: "Bob", age: 22, course: "Mathematics", year: 3 },
+    { id: "3", name: "Charlie", age: 21, course: "Physics", year: 3 },
+  ]).write();
+}
+
 // Inicializar o banco de dados
 db.defaults({ students: [] }).write();
 
