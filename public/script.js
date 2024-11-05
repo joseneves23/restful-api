@@ -48,6 +48,12 @@ async function addStudent() {
   const course = document.getElementById("newCourse").value;
   const year = parseInt(document.getElementById("newYear").value);
 
+  // Verificar se todos os campos estão preenchidos
+  if (!name || isNaN(age) || !course || isNaN(year)) {
+    alert("Por favor, preencha todos os campos.");
+    return;
+  }
+
   // Primeiro, busca todos os estudantes para encontrar o maior ID
   const response = await fetch(apiUrl);
   const students = await response.json();
@@ -115,15 +121,18 @@ async function updateStudent() {
   document.getElementById("updateYear").value = ""; // Limpa o campo de Ano
 }
 
-// Função para deletar um estudante
+/// Função para remover um estudante
 async function deleteStudent(id) {
-  const deleteResponse = await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
-
-  if (deleteResponse.ok) {
-    fetchStudents(); // Atualiza a lista após a deleção
-  } else {
-    console.error("Failed to delete student:", deleteResponse.statusText);
+  // Pop-up de confirmação
+  const confirmation = confirm(
+    "Tem certeza de que deseja remover este estudante?"
+  );
+  if (!confirmation) {
+    return; // Se o usuário cancelar, não faça nada
   }
+
+  await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
+  fetchStudents();
 }
 
 // Carregar a lista de estudantes ao carregar a página
