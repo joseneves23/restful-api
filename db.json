@@ -1,0 +1,25 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "João",
+      "age": 22,
+      "course": "Engenharia",
+      "year": 3
+    },
+    {
+      "id": "2",
+      "name": "Maria",
+      "age": 22,
+      "course": "Matemática",
+      "year": 3
+    },
+    {
+      "id": "3",
+      "name": "Pedro",
+      "age": 23,
+      "course": "Medicina",
+      "year": 4
+    }
+  ]
+}

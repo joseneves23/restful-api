@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo da API - Estudantes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Demo da API - Gestão de Estudantes</h1>
+
+    <!-- Navegação para outras páginas -->
+    <div class="nav-container">
+      <nav>
+        <a href="/">Home</a> | <a href="/about">Sobre os Autores</a> |
+        <a href="/doc">Documentação da API</a>
+      </nav>
+    </div>
+
+    <section>
+      <h2>Lista de Estudantes</h2>
+      <div id="students" class="student-list"></div>
+    </section>
+
+    <section>
+      <h2>Atualizar Estudante</h2>
+      <input type="text" id="updateId" placeholder="ID" readonly />
+      <input type="text" id="updateName" placeholder="Nome" />
+      <input type="number" id="updateAge" placeholder="Idade" />
+      <input type="text" id="updateCourse" placeholder="Curso" />
+      <input type="number" id="updateYear" placeholder="Ano" />
+      <button onclick="updateStudent()">Atualizar</button>
+    </section>
+
+    <section>
+      <h2>Adicionar novo Estudante</h2>
+      <input type="text" id="newName" placeholder="Nome" />
+      <input type="number" id="newAge" placeholder="Idade" />
+      <input type="text" id="newCourse" placeholder="Curso" />
+      <input type="number" id="newYear" placeholder="Ano" />
+      <button onclick="addStudent()">Adicionar</button>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

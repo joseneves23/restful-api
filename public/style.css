@@ -1,0 +1,85 @@
+/* style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f3d3; /* Fundo claro para contraste */
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+ul {
+  list-style-type: disc; /* Mantém os marcadores */
+  padding: 0; /* Remove o padding padrão da lista */
+  margin: 0 auto; /* Centraliza a lista horizontalmente */
+  display: inline-block; /* Permite que a lista seja centralizada */
+}
+
+ul li {
+  margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+  text-align: left; /* Alinha o texto à esquerda para os itens da lista */
+}
+
+/* Para justificar o texto dos itens da lista */
+li {
+  text-align: justify; /* Justifica o texto dentro dos itens da lista */
+}
+
+h1,
+h2 {
+  text-align: center; /* Centraliza os títulos */
+  color: #b18a00; /* Amarelo torrado para títulos */
+}
+
+.student-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column; /* Coloca a lista de estudantes em coluna */
+  align-items: center; /* Centraliza os itens */
+}
+
+.student-item {
+  background-color: #ffeb80; /* Amarelo mais suave para os itens da lista */
+  border: 1px solid #b18a00; /* Borda em amarelo torrado */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 80%; /* Ajusta a largura dos itens */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+button {
+  background-color: #b18a00; /* Botão amarelo torrado */
+  color: white; /* Texto branco */
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer; /* Cursor de mão ao passar o mouse */
+  margin-top: 10px; /* Espaço acima dos botões */
+  margin-left: 5px;
+}
+
+button:hover {
+  background-color: #a77b00; /* Escurece o botão ao passar o mouse */
+}
+
+section {
+  margin: 20px auto; /* Centraliza as seções */
+  text-align: center; /* Centraliza o texto nas seções */
+  width: 80%; /* Ajusta a largura das seções */
+}
+
+.nav-container {
+  text-align: center; /* Centraliza o texto dentro da div */
+  margin: 20px 0; /* Espaço acima e abaixo da barra de navegação */
+}
+
+nav a {
+  color: #b18a00; /* Cor dos links */
+  text-decoration: none; /* Remove o sublinhado */
+  margin: 0 15px; /* Espaço horizontal entre os links */
+}
+
+nav a:hover {
+  text-decoration: underline; /* Sublinhado ao passar o mouse sobre os links */
+}
