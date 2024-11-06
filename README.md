@@ -2,7 +2,8 @@
 
 ## Descrição
 
-Esta aplicação é uma API RESTful desenvolvida para o gerenciamento de estudantes. Foi construída usando **Node.js**, **Express** e **lowDB** para simular um banco de dados persistente. 
+Esta aplicação é uma API RESTful desenvolvida para o gerenciamento de estudantes. 
+Foi construída usando **Node.js**, **Express** e **lowDB** para simular um banco de dados persistente. 
 A aplicação permite realizar operações CRUD (Create, Read, Update, Delete) para um recurso "Estudante".
 
 A API está deployada em [Render.com](https://restful-api-2bex.onrender.com/) e inclui uma interface de demonstração em HTML, CSS e JavaScript para interação direta com as rotas.
