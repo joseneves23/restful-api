@@ -1,6 +1,3 @@
-// script.js
-
-// Mude a URL da API para usar o endpoint correto dependendo se está local ou em produção
 const apiUrl =
   window.location.hostname === "localhost"
     ? "http://localhost:3000/students"
@@ -128,7 +125,7 @@ async function deleteStudent(id) {
     "Tem certeza de que deseja remover este estudante?"
   );
   if (!confirmation) {
-    return; // Se o usuário cancelar, não faça nada
+    return; // Se o utilizador cancelar, retorna
   }
 
   await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
