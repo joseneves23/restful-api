@@ -61,6 +61,22 @@ button:hover {
   background-color: #a77b00; /* Escurece o botão ao passar o mouse */
 }
 
+.delete-button {
+  background-color: rgb(
+    228,
+    2,
+    2
+  ); /* Define a cor de fundo do botão como vermelho */
+  color: white; /* Define a cor do texto como branco para melhor contraste */
+  border: none; /* Remove a borda padrão */
+  padding: 8x 15px; /* Adiciona algum preenchimento ao botão */
+  cursor: pointer; /* Muda o cursor para um ponteiro ao passar sobre o botão */
+}
+
+.delete-button:hover {
+  background-color: darkred; /* Muda a cor de fundo ao passar o mouse sobre o botão */
+}
+
 section {
   margin: 20px auto; /* Centraliza as seções */
   text-align: center; /* Centraliza o texto nas seções */

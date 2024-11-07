@@ -19,7 +19,7 @@ async function fetchStudents() {
       div.className = "student-item";
       div.innerHTML = `
           <strong>${student.name}</strong> (Id: ${student.id}, Idade: ${student.age}, Curso: ${student.course}, Ano: ${student.year})
-          <button onclick="deleteStudent('${student.id}')">Delete</button>
+          <button class="delete-button" onclick="deleteStudent('${student.id}')">Remover</button>
           <button onclick="showUpdateForm('${student.id}', '${student.name}', ${student.age}, '${student.course}', ${student.year})">Atualizar</button>
       `;
       studentsDiv.appendChild(div);
