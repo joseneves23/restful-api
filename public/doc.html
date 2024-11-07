@@ -7,24 +7,63 @@
   </head>
 
   <body>
-    <div>
+    <div style="text-align: center">
       <h1>Documentação da API</h1>
       <p>As rotas disponíveis são:</p>
-      <ul>
-        <li>GET / - Retorna uma página de demonstração da API.</li>
-        <li>
-          GET /about - Retorna uma página com informações sobre os autores.
-        </li>
-        <li>GET /doc - Retorna uma página com documentação da API.</li>
-        <li>GET /students - Retorna todos os estudantes.</li>
-        <li>GET /students/{id} - Retorna um estudante específico pelo id.</li>
-        <li>POST /students - Adiciona um novo estudante.</li>
-        <li>PUT /students/{id} - Atualiza os dados de um estudante pelo id.</li>
-        <li>DELETE /students/{id} - Remove um estudante específico pelo id.</li>
-      </ul>
+      <table border="1" cellpadding="10" style="margin: 0 auto">
+        <thead>
+          <tr>
+            <th>Método</th>
+            <th>Rota</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GET</td>
+            <td>/</td>
+            <td>Retorna uma página de demonstração da API.</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/about</td>
+            <td>Retorna uma página com informações sobre os autores.</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/doc</td>
+            <td>Retorna uma página com documentação da API.</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/students</td>
+            <td>Retorna todos os estudantes.</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/students/{id}</td>
+            <td>Retorna um estudante específico pelo id.</td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>/students</td>
+            <td>Adiciona um novo estudante.</td>
+          </tr>
+          <tr>
+            <td>PUT</td>
+            <td>/students/{id}</td>
+            <td>Atualiza os dados de um estudante pelo id.</td>
+          </tr>
+          <tr>
+            <td>DELETE</td>
+            <td>/students/{id}</td>
+            <td>Remove um estudante específico pelo id.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <div>
+    <div style="text-align: center; margin-top: 20px">
       <!-- Botão para voltar à página principal -->
       <button onclick="window.location.href='/'">Home</button>
     </div>
