@@ -35,7 +35,7 @@ Para executar a aplicação, siga os passos abaixo:
 
    para acessar a interface de demonstração.
 
-Certifique-se de ter o Node.js e o npm instalados na sua máquina antes de seguir os passos acima.
+Certifique-se de ter o `Node.js` e o `npm` instalados na sua máquina antes de seguir os passos acima.
 
 ## Autoria
 
